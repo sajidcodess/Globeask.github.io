@@ -1,0 +1,643 @@
+@import 'config';
+
+main {
+    width: 100%;
+    margin: auto;
+}
+
+.hero-bg {
+    background-image: url("./images/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: top center;
+}
+
+
+.hero-container {
+    position: relative;
+}
+
+.hero {
+    padding-top: 10rem;
+    color: $primary-color;
+    padding-bottom: 2rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title title"
+                          "para para"
+                          "btns btns"
+                          "phone-image phone-image"
+    ;
+    
+
+    &__title {
+        margin-bottom: 2rem;
+        grid-area: title;
+    }
+
+    & span {
+        background-color: $color-yellow;
+        padding: 0 5px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            background-color: $color-yellow;
+            width: 5rem;
+            height: 3px;
+
+        }
+    }
+
+    &__text {
+        line-height: 2;
+        grid-area: para;
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+        grid-area: btns;
+        align-self: center;
+        z-index: 1;
+    }
+
+    &__phone {
+        transform: translateY(5rem);
+        grid-area: phone-image;
+        position: absolute;
+        bottom: -1rem;
+        left: 4rem;
+        z-index: 0;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+}
+
+
+
+.btn-hover:hover{
+  background-color: #2ac0e596;
+  box-shadow: 1px 10px 20px black;
+  cursor: pointer;
+}
+
+
+//img slides(carousel)
+.carousel {
+    text-align: center;
+    margin-top: 8rem;
+
+    & .caro-heading {
+        margin-bottom: 1rem;
+    }
+
+    & hr {
+        background-color:#DE5B5B;
+        width: 4rem;
+        height: 4px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+/* Slideshow container */
+.slideshow-container {
+    // width: 600px;
+    max-width: 600px;
+    margin:0 auto;
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    margin: 0 auto
+}
+.caro-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+}
+.img-wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem auto;
+}
+/* Caption text */
+.img-text {
+  margin: 0.5rem auto;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  line-height: 1.5;
+  color: black;
+  font-size: 22px;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dot-container {
+  position: relative;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0.3rem;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgba(0, 0, 0, 0.644);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 28%;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 28%;
+    border-radius: 3px 0 0 3px;
+  }
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: $color-footer2;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+/*****************************************************Section 3 *****************************************/
+.sec3 {
+  margin: 1rem 0;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  & .sec3-para {
+    font-size: 1.2rem;
+    background-color: $secondary-color;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    order: 2;
+
+    & h2 {
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: 0.2em;
+      & hr {
+        background-color:#DE5B5B;
+        width: 4rem;
+        height: 4px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    & p {
+        padding: 1.5rem 0;
+        & .pt {
+          display: block;
+          padding-top: 1.5rem;
+        }
+        & .sec3-btn {
+            background-color: $primary-color;
+            border: none;
+            outline: none;
+            margin-top: 0.5rem;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
+            & span {
+              position: relative;
+              top: 0.3rem;
+            }
+        }
+        
+    }
+    
+  }
+  
+  & .sec3-img {
+    height: 45vh;
+    order: 1;
+    background-image: url("/Mask-Group.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    
+     & .sec3-phones {
+        width: 100%;
+        min-width: 550px;
+        position: relative;
+        left: -30%;
+        top: -40%;
+  
+  }
+  }
+  
+}
+
+
+/*****************************************************Section 4 *****************************************/
+.sec4 {
+  text-align: center;
+
+  & h2 {
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 3rem;
+    & hr {
+      background-color:#DE5B5B;
+      width: 4rem;
+      height: 4px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .sec4-container {
+    display: flex;
+    flex-direction: column;
+
+    & .sec4-img {
+
+      & .sec4-photo {
+        max-width: 100%;
+
+      }
+
+    }
+    & .sec4-para {
+      padding-bottom: 2rem;
+      & h3 {
+        margin-bottom: 1.2rem;
+      }
+      & P {
+        padding: 0;
+        font-size: 0.9rem;
+
+      }
+
+      & .sec4-btn {
+            background-color: $color-btn;
+            color: $primary-color;
+            border: none;
+            outline: none;
+            margin-top: 1rem;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
+      }
+      
+      
+    }
+  }
+  }
+
+  /*****************************************************Section 5 FOOTER *****************************************/
+
+  footer {
+    position: relative;
+  }
+
+  .footer-logo {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+
+    & img {
+      max-width: 300px;
+    }
+  }
+  .sec5 {
+    width: 100%;
+    text-align: center;
+    background-color: $color-footer;
+    
+    & h2 {
+      color: $primary-color;
+      letter-spacing: 0.2rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 1rem 0;
+
+      & hr {
+        background-color:#DE5B5B;
+        width: 4rem;
+        height: 4px;
+        display: block;
+        margin: 0 auto;
+
+      }
+    }
+      .sec5-container {
+      
+        display: flex;
+        flex-direction: column;
+
+        & .sec5-form {
+          & form {
+            display: flex;
+            flex-direction: column;
+
+            & .form-input {
+              outline: none;
+              border: none;
+              padding: 0.8rem;
+              width: 335px;
+              border-radius: 30px;
+              margin: 0.5rem auto;
+            }
+            & .sec5-btn {
+              background-color: $color-btn;
+              color: $primary-color;
+              border: none;
+              outline: none;
+              font-weight: bold;
+              box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+              border-radius: 100px;
+              width: max-content;
+              padding: 1rem 2rem;
+
+              & img {
+                vertical-align: middle;
+                width: 100%;
+                max-width: 30px;
+              }
+              
+            }
+          }
+        }
+        & .sec5-para {
+
+          & p {
+            color: $primary-color;
+            margin: 1rem auto;
+            text-align: center;
+            margin-top: 3rem;
+          }
+  
+          &  .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            vertical-align: middle;
+            
+            & a {
+                color: $color-btn;
+                vertical-align: middle;
+                display: grid;
+                place-items: center;
+                padding: 10px 10px ;
+                background-color: $secondary-color;
+                border-radius: 50%;
+            }
+          }
+  
+        }
+      }
+  }
+
+  label {
+    display: none;
+  }
+
+  .bottom-footer {
+    background-color: $color-footer2;
+    padding-top: 5px;
+    margin-top: 1rem;
+    color: $primary-color;
+
+    & small {
+      display: block;
+      font-size: .7rem;
+
+      & pre {
+        font-size: .7rem;
+      }
+    }
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+
+
+/*****************************************************Medai query *****************************************/
+@include media-md {
+  label {
+    display: inline;
+    color: $primary-color;
+    text-align: left;
+  }
+
+  .footer-container {
+    flex-direction: row;
+  }
+    .hero {
+         width: 400px;
+        &__phone {
+            bottom: -3rem;
+            left: 7rem;
+
+            & img {
+                width: 100%;
+                transform: scale(1);
+            }
+        }
+        &__btns {
+            flex-direction: row;
+        }
+    }
+
+    .next {
+      right: 43%;
+    }
+    .prev {
+      left: 43%;
+    }
+    .img-wrap {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+
+      & .img-text {
+        text-align: left; 
+      }
+  }
+
+  .slideshow-container {
+    max-width: 800px;
+  }
+
+  .sec3 {
+    flex-direction: row;
+    
+
+    & h2 {
+      width: 50%;
+      margin: 0 auto;
+    }
+    & .sec3-para {
+      order: 0;
+      text-align: left;
+      width: 50%;
+
+      & p {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+    }
+    & .sec3-img {
+      order: 1;
+      width: 50%;
+      height: auto;
+
+      & .sec3-phones {
+        width: 100%;
+        min-width: 750px;
+        position: relative;
+        left: -35%;
+        top: 0%;
+  
+  }
+
+    }
+  }
+
+  /************************************** SEC 4 *************************************************/
+
+  .sec4 {
+    width: 90%;
+    margin: 0 auto;
+
+    .sec4-container {
+      flex-direction: row;
+      justify-content:space-between;
+
+      & .sec4-img {
+        width: 48%;
+      }
+      & .sec4-para {
+        width: 48%;
+        & p {
+          font-size: 0.9rem;
+        }
+      }
+
+    }
+  }
+
+  .sec5 {
+
+    & h2 {
+      width: 50%;
+      text-align: left;
+
+      & hr {
+        margin-left: 0;
+      }
+    }
+   & .sec5-container {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+
+      & .sec5-para {
+        width: 50%;
+        & p {
+          text-align: left;
+        }
+
+        &  .social-icons {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          gap: 1rem;
+          vertical-align: middle;
+
+      }
+    }
+  }
+
+}
+
+@include media-xs {
+  .hero {
+    width: 400px;
+   &__phone {
+       bottom: 2rem;
+       left: 7rem;
+
+       & img {
+           width: 100%;
+           transform: scale(1.5);
+       }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+@import 'config';
+
+.devenir__header {
+    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+
+    & .hamburger-menu{
+        background-color: black;
+    }
+    //other styls are similar to home-page
+    .hamburger-menu::before,
+    .hamburger-menu::after{
+        background-color: black;
+    }
+
+    body.active .hamburger-menu::before{
+        transform: translateY(0) rotate(45deg);
+        background-color: black;
+    }
+    
+    body.active .hamburger-menu::after{
+        background-color: black;
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    & .devenir {
+        display: none;
+    }
+}
+
+
+main {
+    .devenir__btn {
+        display: block;
+        text-align: center;
+        margin-top: 9rem;
+        margin-bottom: 3rem;
+       & a {
+            background-color: $secondary-color;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+
+            &:hover {
+                background-color: #f0f0f0cb;
+            }
+
+            & img {
+                width: 25px;
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.devenir__sect {
+    text-align: left;
+    & h2 {
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    & hr {
+        background-color:#DE5B5B;
+        width: 4rem;
+        height: 4px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    & .devenir__flex {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 3rem;
+
+        & img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    & li {
+        margin: 10px;
+    }
+
+    & ul, & ol {
+        margin-bottom: 3rem;
+    }
+
+    & h3 {
+        text-align: center;
+        font-weight: 800;
+        margin-top: 2rem;
+    }
+
+    &__btn {
+        background-color: $color-btn;
+        color: $primary-color;
+        display: inline-block;
+        border: none;
+        outline: none;
+        margin: 1rem 0;
+        margin-bottom: 2rem;
+        padding: 1rem 1.5rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 50px;
+        max-width: fit-content;
+    }
+
+    & .btn-wrapper {
+        text-align: center;
+    }
+}
+
+
+.form__section {
+    background-color: $secondary-color;
+    padding: 1rem 0;
+
+    & h2 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 2rem 0;
+        line-height: 1.5;
+    }
+
+    & hr {
+        background-color:#DE5B5B;
+        width: 4rem;
+        height: 4px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    & .form__unit {
+        margin-top: 1rem;
+    }
+
+    &  input, & select {
+        outline: none;
+        border: none;
+        padding: .8rem;
+        width: 100%;
+        border-radius: 30px;
+        margin: 0.5rem auto;
+        overflow: hidden;
+      }
+    
+
+      
+    & label {
+        display: inline;
+        font-weight: bold;
+    }
+
+    & .form-btn {
+        text-align: center;
+    }
+
+    & .form__para {
+        text-align: center;
+        width: 400px;
+        margin: 1rem auto;
+        color: #9B9B9B;
+    }
+
+    & .sec5-btn {
+        background-color: $color-btn;
+        color: $primary-color;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 100px;
+        width: max-content;
+        padding: 1rem 2rem;
+        margin-bottom: 2rem;
+
+        & img {
+          vertical-align: middle;
+          width: 100%;
+          max-width: 30px;
+        }
+        
+      }
+}
+
+
+// =================medai queries=============
+
+@include media-md {
+    main {
+        .devenir__btn {
+            display: block;
+            text-align: right;
+            margin-top: 1.8rem;
+            margin-bottom: 3rem;
+            margin-right: 10px;
+        }
+    }
+
+    .devenir-nav {
+        display: none;
+    }
+
+    .devenir__sect {
+        & .devenir__flex {
+            flex-direction: row;
+            gap: 3rem;
+        }
+
+        & .flex2 {
+            flex-direction: row-reverse;
+        }
+
+        & h3 {
+            text-align: left;
+        }
+
+        &__btn {
+            display: inline-block;
+            margin: 2rem 0;
+            margin-top: 4rem;
+        }
+    }
+
+    .form__section {
+        & input, & select {
+            width: 100%;
+        }
+
+        & label {
+            width: 300px;
+            display: grid;
+            align-items: center;
+            justify-content: end;
+            color: black;
+        }
+
+        & .form__unit {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+    }
+    
+}

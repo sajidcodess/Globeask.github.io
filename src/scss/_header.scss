@@ -1,0 +1,218 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem;
+    z-index: 10;
+
+    & .navbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    & .logo {
+        width: 208rem;
+    }
+
+    & nav {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 100vh;
+        width: 80%;
+        display: none;
+        place-items: center;
+        align-items: flex-end;
+        background-color: $primary-color;
+        padding: 2rem;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+
+        & .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            vertical-align: middle;
+            
+            & a {
+                color: black;
+                padding: 5px 10px ;
+                background-color: $secondary-color;
+                border-radius: 50%;
+                font-size: .7rem;
+            }
+        }
+    }
+}
+
+body.active nav {
+    opacity: 1;
+    display: grid;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0rem auto 0 auto;
+    border-radius: 1rem;
+    padding: 10px;
+    opacity: 1;
+    transition: all 250ms ease-in-out;
+
+
+    &__link {
+        text-decoration: none;
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 1rem;
+        color: black;
+        letter-spacing: 2px;
+    }
+
+    & .devenir {
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        background-color: $secondary-color;
+    }
+
+    &__link:hover {
+        color: rgba(0, 0, 0, 0.733);
+    }
+
+}
+
+
+
+.hamburger{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.toggle {
+    padding: 5px;
+    margin-right: 1rem;
+    z-index: 22;  
+}
+
+body.active .toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+.hamburger-menu{
+    width: 30px;
+    height: 1.6px;
+    border-radius: 25px;
+    background-color: white;
+    transition: .3s all;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1.6px;
+    border-radius: 25px;
+    background-color: white;
+    transition: all 0.3s ease-out
+}
+
+.hamburger-menu::before{
+    transform: translateY(-9px);
+}
+
+.hamburger-menu::after{
+    transform: translateY(9px);
+}
+
+body.active .hamburger-menu::before{
+    transform: translateY(0) rotate(45deg);
+    background-color: black;
+}
+
+body.active .hamburger-menu::after{
+    background-color: black;
+    transform: translateY(0) rotate(-45deg);
+}
+
+body.active .hamburger-menu{
+    transform: rotate(360deg);
+    background-color: transparent;
+}
+
+@include media-md {
+    .toggle {
+        display: none;
+    }
+
+    header {
+        nav {
+                display: flex;
+                min-height: auto;
+                position: absolute;
+                margin-top: -1rem;
+                align-items: flex-start;
+                justify-content: flex-end;
+                background-color: transparent;
+                padding: 2rem;
+                opacity: 1;
+
+            & .social-icons {
+            display: none;
+            }
+        } 
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        list-style: none;
+        text-align: center;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0rem auto 0 auto;
+        border-radius: 1rem;
+        padding: 10px;
+        opacity: 1;
+        transition: all 250ms ease-in-out;
+        
+        & .devenir {
+            padding: .5rem 2rem;
+            border-radius: 25px;
+            background-color: $primary-color;
+            color: black;
+            margin-left: 3rem;
+            margin-bottom: 3rem;
+            line-height: 1;
+        }
+
+        &__link {
+            text-decoration: none;
+            font-family: inherit;
+            font-size: .8rem;
+            color: white;
+        }
+
+        
+    }
+}
